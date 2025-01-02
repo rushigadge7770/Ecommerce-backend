@@ -14,6 +14,9 @@ const express = require('express');
       credentials: true, // enable set cookie
     }
   ));
+  app.get('/',(req,res)=>{
+    res.send('Hello from the server');
+  })
   app.use(express.json({ limit: '100mb' })); // You can adjust the limit according to your needs
 app.use(express.urlencoded({ limit: '100mb', extended: true }));
   app.use(cookieParser());
@@ -32,5 +35,5 @@ app.use(express.urlencoded({ limit: '100mb', extended: true }));
     console.log('MongoDB Connected...');
     console.log(`Server is running on port ${PORT}`);
   })})
-  
+
   
